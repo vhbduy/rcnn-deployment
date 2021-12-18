@@ -20,7 +20,7 @@ def create_ui():
     st.markdown(TITLE, unsafe_allow_html=True)
     # st.write("Hello :)))")
     image_file = st.file_uploader("Choose Image to detect", type=["png", "jpg", "jpeg"])
-    threshold = st.selectbox("Select the threshold", options=THRESHOLD_LIST,index=2)
+    threshold = st.slider("Select the threshold", min_value=0.5, max_value=1.0)
     detect_button = st.button("Detect")
     col1, col2, col3 = st.columns([1, 6, 1])
     st.write("Threshold = " + str(threshold))
