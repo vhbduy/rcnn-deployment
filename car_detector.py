@@ -30,7 +30,7 @@ def get_model(device=None):
     num_classes = 2
     num_features = model.classifier[6].in_features
     model.classifier[6] = nn.Linear(num_features, num_classes)
-    model.load_state_dict(torch.load('./models/best_linear_svm_alexnet_car.pth'))
+    model.load_state_dict(torch.load('./models/best_linear_svm_alexnet_car.pth', map_location=torch.device('cpu')))
     model.eval()
 
     # 取消梯度追踪
